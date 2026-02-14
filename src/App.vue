@@ -572,7 +572,8 @@ export default {
       }
     },
     setModelFilter(filter) {
-      this.modelFilter = filter
+      const map = { '全部': 'all', 'All': 'all', '中国': 'china', 'China': 'china', '美国': 'usa', 'US': 'usa' }
+      this.modelFilter = map[filter] || filter
     },
     setExample() {
       this.question = '写一篇 600 字左右的科幻短篇小说，包含一个意外转折，风格冷峻。'
