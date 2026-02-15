@@ -20,7 +20,7 @@
 
 ## 支持的 AI 模型
 
-支持 OpenRouter 上的所有模型，包括 GPT、Claude、Gemini、Grok 等国际模型，以及 Kimi、GLM、Qwen、DeepSeek、MiniMax 等国产模型。可在设置中自由选择要对比的模型。
+支持 OpenRouter 上的最新模型，包括 GPT-5.2、Claude Opus 4.5、Grok 4、Gemini 3 Pro Preview 等国际模型，以及 Kimi K2.5、GLM-5、MiniMax M2.5、Qwen3 Max Thinking、DeepSeek V3.2 等国产模型。可在设置中自由选择要对比的模型。
 
 ---
 
@@ -125,7 +125,15 @@ npm run build
 
 ## 版本历史
 
-### v0.8.0 (2026-02)
+### v1.0.0 (2026-02)
+- 项目更名为 "思辨场"
+- 优化 UI 交互细节
+
+### v0.9.0
+- 重命名为 Model Judge
+- 新增中英文语言切换功能
+
+### v0.8.0
 - 迁移到 Vue 3
 - 添加颜色区分的模型卡片
 - 添加收藏功能
@@ -136,6 +144,9 @@ npm run build
 - 添加多维度排行
 - 实时显示响应时间、Token 和费用
 - 本地 API 密钥存储
+
+### v0.1.0
+- 初始版本：多模型并发问答对比工具
 
 ---
 

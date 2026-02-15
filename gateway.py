@@ -20,7 +20,7 @@ DIST_DIR = BASE_DIR / "dist"
 
 # OpenRouter 配置
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_API_KEY = "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"
+DEFAULT_API_KEY = ""
 
 # ==================== 密钥管理 ====================
 def load_api_key() -> str:
