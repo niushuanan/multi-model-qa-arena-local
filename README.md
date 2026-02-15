@@ -18,17 +18,17 @@
 
 ## 支持的 AI 模型
 
-| 模型 | 地区 | 颜色 |
-|------|------|------|
-| GPT-5.2 | 美国 | 绿色 |
-| Claude Opus 4.5 | 美国 | 蓝色 |
-| Grok 4 | 美国 | 橙色 |
-| Gemini 3 Pro Preview | 美国 | 紫色 |
-| Kimi K2.5 | 中国 | 粉色 |
-| GLM-5 | 中国 | 红色 |
-| MiniMax M2.5 | 中国 | 青色 |
-| Qwen3 Max Thinking | 中国 | 绿色 |
-| DeepSeek V3.2 | 中国 | 靛蓝 |
+| 模型 | 地区 | 
+|------|------|
+| GPT-5.2 | 美国 |
+| Claude Opus 4.5 | 美国 |
+| Grok 4 | 美国 |
+| Gemini 3 Pro Preview | 美国 |
+| Kimi K2.5 | 中国 |
+| GLM-5 | 中国 |
+| MiniMax M2.5 | 中国 |
+| Qwen3 Max Thinking | 中国 |
+| DeepSeek V3.2 | 中国 |
 
 ---
 
