@@ -1,8 +1,12 @@
 <template>
   <div class="app">
     <header>
-      <div class="title">大模型竞技场 | LLM Arena</div>
+      <div class="title">Model Judge</div>
       <div class="header-actions">
+        <select v-model="language" class="lang-select" @change="saveLanguage">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+        </select>
         <button class="btn-ghost" @click="openFavoritesModal">{{ t.favorites }}</button>
         <button class="btn-ghost" @click="openKeysModal">{{ t.keys }}</button>
       </div>
@@ -1285,7 +1289,7 @@ input[type="search"]:focus {
 }
 
 button {
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   background: var(--ink);
   color: #ffffff;
   padding: 0 14px;
@@ -1306,7 +1310,7 @@ button:disabled { opacity: 0.58; cursor: not-allowed; }
 .btn-ghost {
   color: #222222;
   background: #ffffff;
-  border: 2px solid #cfcfcf;
+  border-color: #cfcfcf;
   box-shadow: none;
 }
 
@@ -1317,7 +1321,7 @@ button:disabled { opacity: 0.58; cursor: not-allowed; }
 .filter-btn {
   min-height: 32px;
   padding: 0 12px;
-  border: 2px solid #cfcfcf;
+  border: 1px solid #cfcfcf;
   background: #fff;
   color: #222222;
   box-shadow: none;
@@ -1337,7 +1341,7 @@ button:disabled { opacity: 0.58; cursor: not-allowed; }
 }
 
 .model-item {
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   min-height: 56px;
   padding: 8px 12px;
   background: var(--card);
@@ -1545,7 +1549,7 @@ button:disabled { opacity: 0.58; cursor: not-allowed; }
 }
 
 .history-item {
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   background: var(--card);
   padding: 8px 9px;
   display: grid;

@@ -18,17 +18,7 @@
 
 ## 支持的 AI 模型
 
-| 模型 | 类型 | 颜色 |
-|------|------|------|
-| GPT-5.2 | 美国 | 绿色 |
-| Claude Opus 4.5 | 美国 | 蓝色 |
-| Grok 4 | 美国 | 橙色 |
-| Gemini 3 Pro Preview | 美国 | 紫色 |
-| Kimi K2.5 | 中国 | 粉色 |
-| GLM-5 | 中国 | 红色 |
-| MiniMax M2.5 | 中国 | 青色 |
-| Qwen3 Max Thinking | 中国 | 绿色 |
-| DeepSeek V3.2 | 中国 | 靛蓝 |
+支持 OpenRouter 上的所有模型，包括 GPT、Claude、Gemini、Grok 等国际模型，以及 Kimi、GLM、Qwen、DeepSeek、MiniMax 等国产模型。可在设置中自由选择要对比的模型。
 
 ---
 
