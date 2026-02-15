@@ -61,8 +61,6 @@ python3 gateway.py
 npm run build
 ```
 
-在浏览器中打开 http://127.0.0.1:8787
-
 ### 首次设置
 
 1. **添加 API 密钥**：
