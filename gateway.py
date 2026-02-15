@@ -223,6 +223,7 @@ async def static_assets(file_path: str):
     raise HTTPException(status_code=404, detail="资源不存在")
 
 
+
 @app.get("/api/key")
 async def get_key():
     """获取当前使用的 API Key（脱敏显示）"""

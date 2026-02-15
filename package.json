@@ -1,6 +1,6 @@
 {
   "name": "multi-model-qa-arena",
-  "version": "0.2.3",
+  "version": "0.2.2",
   "private": true,
   "type": "module",
   "scripts": {

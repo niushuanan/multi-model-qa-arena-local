@@ -114,7 +114,7 @@
       </div>
       <div class="mono" id="runMeta">{{ runMeta }}</div>
       <div class="response-row" id="responses">
-        <div v-for="card in responseCards" :key="card.key" class="resp-card" :class="'card-' + card.key" :style="{ borderColor: card.color, backgroundImage: card.logo ? `url(/模型logo/${card.logo})` : '', backgroundSize: '100px', backgroundPosition: 'right bottom', backgroundRepeat: 'no-repeat', backgroundBlendMode: 'multiply', opacity: card.logo ? 0.95 : 1 }" :ref="el => { if(el) el.style.borderColor = card.color }">
+        <div v-for="card in responseCards" :key="card.key" class="resp-card" :class="'card-' + card.key" :style="{ borderColor: card.color }" :ref="el => { if(el) el.style.borderColor = card.color }">
           <div class="resp-head">
             <div class="resp-title">{{ card.name }}</div>
             <div class="resp-tools">
@@ -129,7 +129,7 @@
           <div class="resp-body" v-if="card.status === 'requesting'">
             <span class="loading-text">{{ card.name }}...</span>
           </div>
-          <div class="resp-body streaming" v-else-if="card.status === '' && card.content" v-html="escapeHtml(card.content) + '<span class=\'streaming-cursor\'>▊</span>'"></div>
+          <div class="resp-body streaming" v-else-if="card.status === '' && card.content" v-html="escapeHtml(card.content)"></div>
           <div class="resp-body" v-else v-html="escapeHtml(card.content)"></div>
         </div>
       </div>
@@ -398,15 +398,15 @@ export default {
         timeoutMs: 90000,
         gatewayBase: 'http://127.0.0.1:8787',
         models: {
-          openai: { id: 'openai/gpt-5.2', name: 'GPT-5.2', region: '美国', color: '#10B981', logo: 'ChatGPT.png' },
-          anthropic: { id: 'anthropic/claude-opus-4.5', name: 'Claude Opus 4.5', region: '美国', color: '#3B82F6', logo: 'claude.png' },
-          xai: { id: 'x-ai/grok-4', name: 'Grok 4', region: '美国', color: '#F59E0B', logo: 'grok.png' },
-          gemini: { id: 'google/gemini-3-pro-preview', name: 'Gemini 3 Pro Preview', region: '美国', color: '#8B5CF6', logo: 'gemini.webp' },
-          moonshot: { id: 'moonshotai/kimi-k2.5', name: 'Kimi K2.5', region: '中国', color: '#EC4899', logo: 'kimi.png' },
-          zhipu: { id: 'z-ai/glm-5', name: 'GLM-5', region: '中国', color: '#EF4444', logo: 'glm.png' },
-          minimax: { id: 'minimax/minimax-m2.5', name: 'MiniMax M2.5', region: '中国', color: '#06B6D4', logo: 'minimax.png' },
-          qwen: { id: 'qwen/qwen3-max-thinking', name: 'Qwen3 Max Thinking', region: '中国', color: '#84CC16', logo: 'qwen.png' },
-          deepseek: { id: 'deepseek/deepseek-v3.2', name: 'DeepSeek V3.2', region: '中国', color: '#6366F1', logo: 'DeepSeek.webp' },
+          openai: { id: 'openai/gpt-5.2', name: 'GPT-5.2', region: '美国', color: '#10B981' },
+          anthropic: { id: 'anthropic/claude-opus-4.5', name: 'Claude Opus 4.5', region: '美国', color: '#3B82F6' },
+          xai: { id: 'x-ai/grok-4', name: 'Grok 4', region: '美国', color: '#F59E0B' },
+          gemini: { id: 'google/gemini-3-pro-preview', name: 'Gemini 3 Pro Preview', region: '美国', color: '#8B5CF6' },
+          moonshot: { id: 'moonshotai/kimi-k2.5', name: 'Kimi K2.5', region: '中国', color: '#EC4899' },
+          zhipu: { id: 'z-ai/glm-5', name: 'GLM-5', region: '中国', color: '#EF4444' },
+          minimax: { id: 'minimax/minimax-m2.5', name: 'MiniMax M2.5', region: '中国', color: '#06B6D4' },
+          qwen: { id: 'qwen/qwen3-max-thinking', name: 'Qwen3 Max Thinking', region: '中国', color: '#84CC16' },
+          deepseek: { id: 'deepseek/deepseek-v3.2', name: 'DeepSeek V3.2', region: '中国', color: '#6366F1' },
         }
       }
     },
@@ -619,7 +619,6 @@ export default {
           key: resp.modelKey,
           name: cfg.name,
           color: cfg.color,
-          logo: cfg.logo,
           content: this.sanitizeText(resp.error || resp.content || (this.language === 'zh' ? '(空响应)' : '(Empty response)')),
           meta: meta,
           status: resp.error ? 'failed' : '',
@@ -749,7 +748,6 @@ export default {
         key: fav.modelKey,
         name: fav.modelName,
         color: this.CONFIG.models[fav.modelKey].color,
-        logo: this.CONFIG.models[fav.modelKey].logo,
         content: fav.content,
         meta: fav.modelName,
         status: '',
@@ -786,7 +784,6 @@ export default {
         key,
         name: this.CONFIG.models[key].name,
         color: this.CONFIG.models[key].color,
-        logo: this.CONFIG.models[key].logo,
         content: '',
         meta: this.CONFIG.models[key].name,
         status: 'requesting',
@@ -1622,9 +1619,10 @@ details.secondary summary::-webkit-details-marker { display: none; }
 
 .file-btn {
   font-size: 12px;
-  color: #fff;
-  background: #6366F1;
+  color: #000;
+  background: #fff;
   padding: 4px 10px;
+  border: 1px solid #000;
   border-radius: 4px;
   display: inline-flex;
   align-items: center;
